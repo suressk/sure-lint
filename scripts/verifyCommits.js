@@ -1,11 +1,13 @@
-const chalk = require('chalk')
+// const chalk = require('chalk')
+// use 'picocolors' to replace 'chalk'
+const colors = require('picocolors')
 
 // const msgPath = process.env.GIT_PARAMS
 const msgPath = process.argv[2]
 const msg = require('fs').readFileSync(msgPath, 'utf-8').trim()
 
 console.log()
-console.log(chalk.bgBlueBright.white('[sure-lint] Commit Msg: '), msg)
+console.log(colors.bgBlue('[sure-lint] Commit Msg: '), msg)
 
 const commitRE =
   /^(revert: )?(feat|fix|docs|dx|style|refactor|perf|test|workflow|build|ci|chore|types|wip|release)(\(.+\))?: .{1,50}/
@@ -13,17 +15,17 @@ const commitRE =
 if (!commitRE.test(msg)) {
   console.log()
   console.error(
-    `  ${chalk.bgRed.white(' ERROR ')} ${chalk.red(
+    `  ${colors.bgRed(' ERROR ')} ${colors.red(
       `invalid commit message format.`
     )}\n\n` +
-      chalk.red(
+      colors.red(
         `  Proper commit message format is required for automated changelog generation. Examples:\n\n`
       ) +
-      `    ${chalk.green(`feat(compiler): add 'comments' option`)}\n` +
-      `    ${chalk.green(
+      `    ${colors.green(`feat(compiler): add 'comments' option`)}\n` +
+      `    ${colors.green(
         `fix(input): handle events on blur (close #28)`
       )}\n\n` +
-      chalk.red(`  See .github/commit-convention.md for more details.\n`)
+      colors.red(`  See .github/commit-convention.md for more details.\n`)
   )
   process.exit(1)
 }
