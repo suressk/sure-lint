@@ -14,7 +14,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "commit-msg": "node scripts/verifyCommits.js"
+      "commit-msg": "ts-node scripts/verifyCommits.ts"
     }
   },
   "lint-staged": {
@@ -27,15 +27,18 @@
     ]
   },
   "devDependencies": {
+    "@types/node": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "conventional-changelog-cli": "^2.2.2",
     "eslint": "^8.18.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.2",
     "picocolors": "^1.0.0",
     "prettier": "^2.7.1",
+    "ts-node": "^10.8.1",
     "typescript": "^4.7.4"
   }
 }
