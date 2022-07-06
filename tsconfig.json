@@ -16,7 +16,7 @@
     "removeComments": false,
     "jsx": "preserve",
     "lib": ["esnext", "dom"],
-    "types": ["jest", "node"],
+    "types": ["node"],
     "rootDir": "."
   }
 }
