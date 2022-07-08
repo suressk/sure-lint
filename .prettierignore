@@ -1,7 +1,0 @@
-/docs
-/examples
-*.css
-*.md
-*.vue
-dist
-pnpm-lock.yaml
