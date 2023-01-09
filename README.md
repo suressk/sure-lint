@@ -1,3 +1,3 @@
 # sure-lint
 
-It's just a example project of Lint and Commit-msg specification
+It's just an example project of Lint and Commit-msg specification
